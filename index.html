@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pie Chart Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>HTML and CSS Pie Chart Generator</h1>
+      <p>
+        Create your own pie chart for use in HTML and CSS. Choose what
+        categories you want in your pie chart, the color you want for them, and
+        how big the section is. Then you can easily copy and paste the generated
+        HTML and CSS into your project.
+      </p>
+    </header>
+
+    <div class="container">
+      <div class="pie-chart">
+        <div class="key">
+          <p>Key</p>
+          <ul>
+            <li id="item-1-key"><span class="dot dot1"></span>Item 1</li>
+            <li id="item-2-key"><span class="dot dot2"></span>Item 2</li>
+            <li id="item-3-key"><span class="dot dot3"></span>Item 3</li>
+            <li id="item-4-key"><span class="dot dot4"></span>Item 4</li>
+            <li id="item-5-key"><span class="dot dot5"></span>Item 5</li>
+          </ul>
+        </div>
+        <div id="pie-preview"></div>
+      </div>
+      <form>
+        <div class="pieceName">
+          <label for="item1-name">Piece 1 Name</label>
+          <input type="text" id="item1-name" />
+          <label for="item2-name">Piece 2 Name</label>
+          <input type="text" id="item2-name" />
+          <label for="item3-name">Piece 3 Name</label>
+          <input type="text" id="item3-name" />
+          <label for="item4-name">Piece 4 Name</label>
+          <input type="text" id="item4-name" />
+          <label for="item5-name">Piece 5 Name</label>
+          <input type="text" id="item5-name" />
+        </div>
+        <div class="piecePercent">
+          <label for="item1-percent">Piece 1 Percent</label>
+          <input type="text" id="item1-percent" />
+          <label for="item2-percent">Piece 2 Percent</label>
+          <input type="text" id="item2-percent" />
+          <label for="item3-percent">Piece 3 Percent</label>
+          <input type="text" id="item3-percent" />
+          <label for="item4-percent">Piece 4 Percent</label>
+          <input type="text" id="item4-percent" />
+          <label for="item5-percent">Piece 5 Percent</label>
+          <input type="text" id="item5-percent" />
+        </div>
+      </form>
+      <div class="preview">
+        <p>HTML</p>
+        <div id="html-preview" class="code-preview">HTML Preview</div>
+      </div>
+      <div class="preview">
+        <p>CSS</p>
+        <div id="css-preview" class="code-preview">CSS Preview</div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

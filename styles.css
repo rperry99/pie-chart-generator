@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header h1 {
+  text-align: center;
+  margin: 25px 0 25px 0;
+}
+header p {
+  width: 50%;
+  margin: 0 auto 25px auto;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.pie-chart,
+form,
+.preview {
+  width: 45%;
+  height: 250px;
+}
+
+.pie-chart {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.key {
+  width: 25%;
+}
+.key p {
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.key ul {
+  list-style: none;
+}
+.key ul li {
+  margin-bottom: 20px;
+  position: relative;
+}
+.key ul li .dot {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  position: absolute;
+  left: -30px;
+  top: -3px;
+  border: solid 1px black;
+}
+.dot1 {
+  background: red;
+}
+.dot2 {
+  background: green;
+}
+.dot3 {
+  background: blue;
+}
+.dot4 {
+  background: yellow;
+}
+.dot5 {
+  background: purple;
+}
+#pie-preview {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: solid 1px black;
+  background: conic-gradient(
+    red 0% 20%,
+    green 20% 40%,
+    blue 40% 60%,
+    yellow 60% 80%,
+    purple 80% 100%
+  );
+  box-shadow: 5px 5px 5px #111;
+}
+
+form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.pieceName input,
+.piecePercent input {
+  margin-bottom: 15px;
+}
+.pieceName label,
+.piecePercent label {
+  margin-right: 10px;
+}
+
+.preview {
+  background: #eee;
+  box-shadow: 5px 5px 5px #111;
+  border: solid 1px black;
+}
+.preview p {
+  background: lightblue;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.preview div {
+  padding: 20px;
+}
+.code-preview {
+  font-family: "Source-Code-Pro", monospace;
+  overflow-y: scroll;
+  height: calc(100% - (65px + 1.2rem));
+}
