@@ -1,0 +1,59 @@
+.pie-chart {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.key {
+  width: 25%;
+}
+.key p {
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.key ul {
+  list-style: none;
+}
+.key ul li {
+  margin-bottom: 20px;
+  position: relative;
+}
+.key ul li .dot {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  position: absolute;
+  left: -30px;
+  top: -3px;
+  border: solid 1px black;
+}
+.dot1 {
+  background: red;
+}
+.dot2 {
+  background: green;
+}
+.dot3 {
+  background: blue;
+}
+.dot4 {
+  background: yellow;
+}
+.dot5 {
+  background: purple;
+}
+#pie-preview {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: solid 1px black;
+  background: conic-gradient(
+    red 0% 10%,
+    green 10% 35%,
+    blue 35% 45%,
+    yellow 45% 50%,
+    purple 50% 110%
+  );
+  box-shadow: 5px 5px 5px #111;
+}

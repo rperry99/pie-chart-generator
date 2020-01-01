@@ -141,12 +141,10 @@ form div div {
   padding: 10px 0;
   font-size: 1.2rem;
   font-weight: bold;
-}
-.preview div {
-  padding: 20px;
+  user-select: none;
 }
 .code-preview {
-  font-family: "Source-Code-Pro", monospace;
   overflow-y: scroll;
-  height: calc(100% - (65px + 1.2rem));
+  height: calc(100% - 75px);
+  padding: 15px;
 }

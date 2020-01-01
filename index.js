@@ -18,6 +18,11 @@ const piece2Percent = document.getElementById("item2-percent");
 const piece3Percent = document.getElementById("item3-percent");
 const piece4Percent = document.getElementById("item4-percent");
 const piece5Percent = document.getElementById("item5-percent");
+let percent1 = 20;
+let percent2 = 20;
+let percent3 = 20;
+let percent4 = 20;
+let percent5 = 20;
 
 // Pie Chart
 const pieChart = document.getElementById("pie-preview");
@@ -30,6 +35,7 @@ function generate() {
   updateKey();
   updatePercent();
   updateHTML();
+  updateCSS();
 }
 
 function updateKey() {
@@ -41,11 +47,11 @@ function updateKey() {
 }
 
 function updatePercent() {
-  let percent1 = parseInt(piece1Percent.value);
-  let percent2 = parseInt(piece2Percent.value) + percent1;
-  let percent3 = parseInt(piece3Percent.value) + percent2;
-  let percent4 = parseInt(piece4Percent.value) + percent3;
-  let percent5 = parseInt(piece5Percent.value) + percent4;
+  percent1 = parseInt(piece1Percent.value);
+  percent2 = parseInt(piece2Percent.value) + percent1;
+  percent3 = parseInt(piece3Percent.value) + percent2;
+  percent4 = parseInt(piece4Percent.value) + percent3;
+  percent5 = parseInt(piece5Percent.value) + percent4;
   console.log(percent1, percent2, percent3, percent4, percent5);
   pieChart.style.background = `conic-gradient(
     red 0% ${percent1}%,
@@ -57,8 +63,7 @@ function updatePercent() {
 }
 
 function updateHTML() {
-  htmlPreview.innerHTML = `
-  <xmp>
+  htmlPreview.innerHTML = `<xmp>
     <div class="pie-chart">
     <div class="key">
       <p>Key</p>
@@ -71,6 +76,57 @@ function updateHTML() {
       </ul>
     </div>
     <div id="pie-preview"></div>
-  </xmp>
+  </xmp>`;
+}
+
+function updateCSS() {
+  cssPreview.innerHTML = `
+  <pre>
+  .pie-chart { 
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center; 
+  } 
+  .key {width: 25%;} 
+  .key p { 
+    text-align: center; 
+    margin-bottom: 15px; 
+    font-weight: bold; 
+    font-size: 1.2rem; 
+  } 
+  .key ul {list-style: none;} 
+  .key ul li { 
+    margin-bottom: 20px; 
+    position: relative; 
+  } 
+  .key ul li .dot { 
+    height: 20px; 
+    width: 20px; 
+    border-radius: 50%; 
+    position: absolute; 
+    left: -30px; 
+    top: -3px; 
+    border: solid 1px black; 
+  } 
+  .dot1 {background: red;} 
+  .dot2 {background: green;} 
+  .dot3 {background: blue;} 
+  .dot4 {background: yellow;} 
+  .dot5 {background: purple;} 
+  #pie-preview { 
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%; 
+    border: solid 1px black; 
+    background: conic-gradient( 
+      red 0% ${percent1}%, 
+      green ${percent1}% ${percent2}%, 
+      blue ${percent2}% ${percent3}%, 
+      yellow ${percent3}% ${percent4}%, 
+      purple ${percent4}% ${percent5}% 
+    ); 
+    box-shadow: 5px 5px 5px #111; 
+  }
+  </pre>
   `;
 }
