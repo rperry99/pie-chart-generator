@@ -90,6 +90,23 @@ form,
   );
   box-shadow: 5px 5px 5px #111;
 }
+.pie-chart a {
+  background: green;
+  color: white;
+  height: 50px;
+  width: 100px;
+  text-align: center;
+  line-height: 50px;
+  border: solid 1px black;
+  box-shadow: 5px 5px 5px #111;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+.pie-chart a:active {
+  transform: translateY(5px);
+  box-shadow: 1px 1px 3px #111;
+}
 
 form {
   display: flex;
