@@ -22,63 +22,15 @@
       <div class="pie-chart">
         <div class="key">
           <p>Key</p>
-          <ul>
-            <li id="item1-key"><span class="dot dot1"></span>Item 1</li>
-            <li id="item2-key"><span class="dot dot2"></span>Item 2</li>
-            <li id="item3-key"><span class="dot dot3"></span>Item 3</li>
-            <li id="item4-key"><span class="dot dot4"></span>Item 4</li>
-            <li id="item5-key"><span class="dot dot5"></span>Item 5</li>
-          </ul>
+          <ul id="keyList"></ul>
         </div>
         <div id="pie-preview"></div>
         <a id="generate" onclick="generate()">Generate</a>
       </div>
-      <form>
-        <div class="pieceName">
-          <div>
-            <label for="item1-name">Item 1 Name</label>
-            <input type="text" id="item1-name" />
-          </div>
-          <div>
-            <label for="item2-name">Item 2 Name</label>
-            <input type="text" id="item2-name" />
-          </div>
-          <div>
-            <label for="item3-name">Item 3 Name</label>
-            <input type="text" id="item3-name" />
-          </div>
-          <div>
-            <label for="item4-name">Item 4 Name</label>
-            <input type="text" id="item4-name" />
-          </div>
-          <div>
-            <label for="item5-name">Item 5 Name</label>
-            <input type="text" id="item5-name" />
-          </div>
-        </div>
-        <div class="piecePercent">
-          <div>
-            <label for="item1-percent">Item 1 Percent</label>
-            <input type="text" id="item1-percent" />
-          </div>
-          <div>
-            <label for="item2-percent">Item 2 Percent</label>
-            <input type="text" id="item2-percent" />
-          </div>
-          <div>
-            <label for="item3-percent">Item 3 Percent</label>
-            <input type="text" id="item3-percent" />
-          </div>
-          <div>
-            <label for="item4-percent">Item 4 Percent</label>
-            <input type="text" id="item4-percent" />
-          </div>
-          <div>
-            <label for="item5-percent">Item 5 Percent</label>
-            <input type="text" id="item5-percent" />
-          </div>
-        </div>
-      </form>
+      <div class="textboxes">
+        <form id="form-box"></form>
+        <a onclick="add()" class="add">Add an Item</a>
+      </div>
       <div class="preview">
         <p>HTML</p>
         <div id="html-preview" class="code-preview"></div>

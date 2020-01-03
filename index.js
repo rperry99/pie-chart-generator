@@ -31,6 +31,15 @@ const pieChart = document.getElementById("pie-preview");
 const htmlPreview = document.getElementById("html-preview");
 const cssPreview = document.getElementById("css-preview");
 
+// Keeping track of items
+let currentItemNumber = 0;
+
+// Form section
+const formSection = document.getElementById("form-box");
+
+// Key list
+const keyList = document.getElementById("keyList");
+
 function generate() {
   updateKey();
   updatePercent();
@@ -129,4 +138,64 @@ function updateCSS() {
   }
   </pre>
   `;
+}
+
+const color = [
+  "#DB050D",
+  "#F36523",
+  "#FEF200",
+  "#7CC576",
+  "#34A458",
+  "#FAB9CF",
+  "#F76DB8",
+  "#CA0088",
+  "#92D4F7",
+  "#91B1EE",
+  "#103B8A",
+  "#032360",
+  "#8781BF",
+  "#662E93",
+  "#BA9B6F",
+  "#4E2B0B"
+];
+let colorNumber = 0;
+
+function add() {
+  currentItemNumber++;
+  let node = document.createElement("DIV");
+  node.classList.add("item");
+  node.innerHTML = `
+      <div>
+        <label for="item${currentItemNumber}-name">Item ${currentItemNumber} Name</label>
+        <input type="text" id="item${currentItemNumber}-name" />
+      </div>
+      <div>
+        <label for="item${currentItemNumber}-percent">Item ${currentItemNumber} Percent</label>
+        <input type="text" id="item${currentItemNumber}-percent" />
+      </div>
+      <a onclick="remove()" class="remove">X</a>
+  `;
+  formSection.appendChild(node);
+
+  let keyNode = document.createElement("LI");
+  keyNode.innerHTML = `Item ${currentItemNumber}`;
+  if (
+    colorNumber === 0 ||
+    colorNumber === 4 ||
+    colorNumber === 7 ||
+    colorNumber === 10 ||
+    colorNumber === 11 ||
+    colorNumber === 13 ||
+    colorNumber === 15
+  ) {
+    keyNode.style.color = "white";
+  }
+  keyNode.style.background = color[colorNumber];
+  keyList.appendChild(keyNode);
+
+  if (colorNumber <= color.length - 2) {
+    colorNumber++;
+  } else {
+    colorNumber = 0;
+  }
 }
